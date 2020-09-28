@@ -1,57 +1,58 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Data;
+using System.Collections.Generic;
+using Microsoft.Win32.SafeHandles;
 
 namespace SyncSourceToTarget
 {
-    
     class FileSysInfo
     {
-
         static void Main()
         {
-            // You can also use System.Environment.GetLogicalDrives to
-            // obtain names of all logical drives on the computer.
-            System.IO.DriveInfo di = new System.IO.DriveInfo(@"/Users/moraghan/docker");
-
-            // Get the root directory and print out some information about it.
-            System.IO.DirectoryInfo dirInfo = di.RootDirectory;
-
-            // Get the files in the directory and print out some information about them.
-            System.IO.FileInfo[] fileNames = dirInfo.GetFiles("*.*");
-
-            // foreach (System.IO.FileInfo fi in fileNames)
-            // {
-            //     Console.WriteLine("{0}: {1}: {2}", fi.Name, fi.LastAccessTime, fi.Length);
-            // }
-            //
-            dSearch();
+            TakeInitialDirSnapshot();
         }
 
-        static void dSearch()
+        static void TakeInitialDirSnapshot()
         {
-            DataTable table = new DataTable();
-            table.Columns.Add("fileName", typeof(string));
-            table.Columns.Add("lastAccessTime", typeof(string));
-            table.Columns.Add("size", typeof(string));
-            table.Columns.Add("extension", typeof(string));
-            table.Columns.Add("directory", typeof(string));
+            List<datafile> Datafiles = new List<datafile>();
 
             foreach (var file in Directory.EnumerateFiles(@"/Users/moraghan/docker",
                 "*.*",
                 SearchOption.AllDirectories))
             {
-                // Display file path.
                 var fFile = new FileInfo(file);
-                table.Rows.Add(fFile.Name, fFile.LastAccessTime, fFile.Length, fFile.Extension, fFile.DirectoryName);
-                Console.WriteLine("{0}: {1}: {2}: {3}: {4}", fFile.Name, fFile.LastAccessTime, fFile.Length,
-                    fFile.Extension, fFile.DirectoryName);
+
+                datafile newSourceFile = new datafile()
+                {
+                    fileName = fFile.Name,
+                    lastAccessTime = fFile.LastAccessTime,
+                    size = fFile.Length,
+                    extension = fFile.Extension,
+                    directory = fFile.DirectoryName,
+                    status = "Snapshot"
+                };
+
+                Datafiles.Add(newSourceFile);
             }
 
-            foreach (var row in table.Rows)
+            foreach (datafile fFile in Datafiles)
             {
-                Console.WriteLine(row.directory.ToString());
+                Console.WriteLine("{0}: {1}: {2}: {3}: {4}: {5}", fFile.fileName, fFile.lastAccessTime, fFile.size,
+                    fFile.extension, fFile.directory, fFile.status);
             }
+        }
+
+        class datafile
+        {
+            public string fileName { get; set; }
+            public DateTime lastAccessTime { get; set; }
+            public long size { get; set; }
+            public string extension { get; set; }
+            public string directory { get; set; }
+            public string status { get; set; }
+            
         }
     }
 }
