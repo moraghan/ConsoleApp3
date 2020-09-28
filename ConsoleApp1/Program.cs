@@ -1,47 +1,52 @@
 ﻿using System;
-using System.ComponentModel;
-using System.IO;
-using System.Data;
 using System.Collections.Generic;
-using Microsoft.Win32.SafeHandles;
+using System.IO;
+using SyncSourceToTarget;
 
-namespace SyncSourceToTarget
+namespace ConsoleApp1
 {
-    class FileSysInfo
+    static class FileSysInfo
     {
         static void Main()
         {
-            TakeInitialDirSnapshot();
+            List<Datafile> sourceSnapshot = TakeInitialDirSnapshot(@"/Users/moraghan/docker");
+            foreach (Datafile fFile in sourceSnapshot)
+            {
+                Console.WriteLine("{0}: {1}: {2}: {3}: {4}: {5}", fFile.fileName, fFile.lastAccessTime, fFile.size,
+                    fFile.extension, fFile.directory, fFile.status);
+            }
+            
         }
 
-        static void TakeInitialDirSnapshot()
+        static List<Datafile> TakeInitialDirSnapshot(string sourceDirName)
         {
-            List<Datafile> Datafiles = new List<Datafile>();
+            List<string> validExtensions = new List<string>() {".txt", ".bak", ".sql"};
+            
+            List<Datafile> Datafiles = new List<Datafile>() ;
 
-            foreach (var file in Directory.EnumerateFiles(@"/Users/moraghan/docker",
+            foreach (var file in Directory.EnumerateFiles(sourceDirName,
                 "*.*",
                 SearchOption.AllDirectories))
             {
                 var fFile = new FileInfo(file);
 
-                Datafile newSourceFile = new Datafile()
+                if (validExtensions.Contains(fFile.Extension))
                 {
-                    fileName = fFile.Name,
-                    lastAccessTime = fFile.LastAccessTime,
-                    size = fFile.Length,
-                    extension = fFile.Extension,
-                    directory = fFile.DirectoryName,
-                    status = "Snapshot"
-                };
+                    var newSourceFile = new Datafile();
 
-                Datafiles.Add(newSourceFile);
+                    newSourceFile.fileName = fFile.Name;
+                    newSourceFile.lastAccessTime = fFile.LastAccessTime;
+                    newSourceFile.size = fFile.Length;
+                    newSourceFile.extension = fFile.Extension;
+                    newSourceFile.directory = fFile.DirectoryName;
+                    newSourceFile.status = "Snapshot";
+
+                    Datafiles.Add(newSourceFile);
+                }
             }
 
-            foreach (Datafile fFile in Datafiles)
-            {
-                Console.WriteLine("{0}: {1}: {2}: {3}: {4}: {5}", fFile.fileName, fFile.lastAccessTime, fFile.size,
-                    fFile.extension, fFile.directory, fFile.status);
-            }
+            return Datafiles;
+            
         }
         
     }

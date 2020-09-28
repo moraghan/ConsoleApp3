@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b238782-be15-41f5-9df8-ce0f5b80a5a1" name="Default Changelist" comment="Changed to class">
-      <change afterPath="$PROJECT_DIR$/ConsoleApp1/Datafile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/netcoreapp3.1/ConsoleApp1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/netcoreapp3.1/ConsoleApp1.pdb" afterDir="false" />
     </list>
@@ -27,8 +24,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp1/Program.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp1/Datafile.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp1/ValidExtensions.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp1/Program.cs" />
       </list>
     </option>
   </component>
@@ -74,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601051725738</updated>
-      <workItem from="1601051731298" duration="13883000" />
+      <workItem from="1601051731298" duration="17853000" />
     </task>
     <task id="LOCAL-00001" summary="Changed to class">
       <created>1601312644474</created>
@@ -83,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601312644474</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed to class">
+      <created>1601314348274</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601314348274</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,28 +109,28 @@
       <screen x="0" y="23" width="3941" height="1186" />
     </state>
     <state x="1213" y="292" key="Github.UntrackedFilesDialog/0.23.3941.1186@0.23.3941.1186" timestamp="1601190387851" />
-    <state width="2298" height="290" key="GridCell.Tab.0.bottom" timestamp="1601313975911">
+    <state width="2298" height="290" key="GridCell.Tab.0.bottom" timestamp="1601318180118">
       <screen x="0" y="23" width="3103" height="1186" />
     </state>
-    <state width="2298" height="290" key="GridCell.Tab.0.bottom/0.23.3103.1186@0.23.3103.1186" timestamp="1601313975911" />
+    <state width="2298" height="290" key="GridCell.Tab.0.bottom/0.23.3103.1186@0.23.3103.1186" timestamp="1601318180118" />
     <state width="2298" height="290" key="GridCell.Tab.0.bottom/0.23.3165.1186@0.23.3165.1186" timestamp="1601126067823" />
     <state width="2298" height="290" key="GridCell.Tab.0.bottom/0.23.3941.1186@0.23.3941.1186" timestamp="1601192130199" />
-    <state width="2298" height="290" key="GridCell.Tab.0.center" timestamp="1601313975910">
+    <state width="2298" height="290" key="GridCell.Tab.0.center" timestamp="1601318180117">
       <screen x="0" y="23" width="3103" height="1186" />
     </state>
-    <state width="2298" height="290" key="GridCell.Tab.0.center/0.23.3103.1186@0.23.3103.1186" timestamp="1601313975910" />
+    <state width="2298" height="290" key="GridCell.Tab.0.center/0.23.3103.1186@0.23.3103.1186" timestamp="1601318180117" />
     <state width="2298" height="290" key="GridCell.Tab.0.center/0.23.3165.1186@0.23.3165.1186" timestamp="1601126067822" />
     <state width="2298" height="290" key="GridCell.Tab.0.center/0.23.3941.1186@0.23.3941.1186" timestamp="1601192130198" />
-    <state width="2298" height="290" key="GridCell.Tab.0.left" timestamp="1601313975909">
+    <state width="2298" height="290" key="GridCell.Tab.0.left" timestamp="1601318180117">
       <screen x="0" y="23" width="3103" height="1186" />
     </state>
-    <state width="2298" height="290" key="GridCell.Tab.0.left/0.23.3103.1186@0.23.3103.1186" timestamp="1601313975909" />
+    <state width="2298" height="290" key="GridCell.Tab.0.left/0.23.3103.1186@0.23.3103.1186" timestamp="1601318180117" />
     <state width="2298" height="290" key="GridCell.Tab.0.left/0.23.3165.1186@0.23.3165.1186" timestamp="1601126067822" />
     <state width="2298" height="290" key="GridCell.Tab.0.left/0.23.3941.1186@0.23.3941.1186" timestamp="1601192130197" />
-    <state width="2298" height="290" key="GridCell.Tab.0.right" timestamp="1601313975911">
+    <state width="2298" height="290" key="GridCell.Tab.0.right" timestamp="1601318180118">
       <screen x="0" y="23" width="3103" height="1186" />
     </state>
-    <state width="2298" height="290" key="GridCell.Tab.0.right/0.23.3103.1186@0.23.3103.1186" timestamp="1601313975911" />
+    <state width="2298" height="290" key="GridCell.Tab.0.right/0.23.3103.1186@0.23.3103.1186" timestamp="1601318180118" />
     <state width="2298" height="290" key="GridCell.Tab.0.right/0.23.3165.1186@0.23.3165.1186" timestamp="1601126067823" />
     <state width="2298" height="290" key="GridCell.Tab.0.right/0.23.3941.1186@0.23.3941.1186" timestamp="1601192130198" />
     <state x="749" y="190" key="SettingsEditor" timestamp="1601313215137">
@@ -136,9 +141,9 @@
       <screen x="0" y="23" width="3103" height="1186" />
     </state>
     <state x="170" y="123" width="2140" height="857" key="VCS.FileHistoryDialog/0.23.3103.1186@0.23.3103.1186" timestamp="1601313588660" />
-    <state x="840" y="291" key="Vcs.Push.Dialog.v2" timestamp="1601312665720">
+    <state x="840" y="291" key="Vcs.Push.Dialog.v2" timestamp="1601314358443">
       <screen x="0" y="23" width="3103" height="1186" />
     </state>
-    <state x="840" y="291" key="Vcs.Push.Dialog.v2/0.23.3103.1186@0.23.3103.1186" timestamp="1601312665720" />
+    <state x="840" y="291" key="Vcs.Push.Dialog.v2/0.23.3103.1186@0.23.3103.1186" timestamp="1601314358443" />
   </component>
 </project>
