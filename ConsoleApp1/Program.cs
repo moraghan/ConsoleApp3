@@ -16,7 +16,7 @@ namespace SyncSourceToTarget
 
         static void TakeInitialDirSnapshot()
         {
-            List<datafile> Datafiles = new List<datafile>();
+            List<Datafile> Datafiles = new List<Datafile>();
 
             foreach (var file in Directory.EnumerateFiles(@"/Users/moraghan/docker",
                 "*.*",
@@ -24,7 +24,7 @@ namespace SyncSourceToTarget
             {
                 var fFile = new FileInfo(file);
 
-                datafile newSourceFile = new datafile()
+                Datafile newSourceFile = new Datafile()
                 {
                     fileName = fFile.Name,
                     lastAccessTime = fFile.LastAccessTime,
@@ -37,22 +37,12 @@ namespace SyncSourceToTarget
                 Datafiles.Add(newSourceFile);
             }
 
-            foreach (datafile fFile in Datafiles)
+            foreach (Datafile fFile in Datafiles)
             {
                 Console.WriteLine("{0}: {1}: {2}: {3}: {4}: {5}", fFile.fileName, fFile.lastAccessTime, fFile.size,
                     fFile.extension, fFile.directory, fFile.status);
             }
         }
-
-        class datafile
-        {
-            public string fileName { get; set; }
-            public DateTime lastAccessTime { get; set; }
-            public long size { get; set; }
-            public string extension { get; set; }
-            public string directory { get; set; }
-            public string status { get; set; }
-            
-        }
+        
     }
 }
