@@ -21,6 +21,7 @@ namespace ConsoleApp1
         static List<Datafile> TakeInitialDirSnapshot(string sourceDirName)
         {
             List<string> validExtensions = new List<string>() {".txt", ".bak", ".sql"};
+            var minModifiedDate = new DateTime(2019,12,18);
             
             List<Datafile> Datafiles = new List<Datafile>() ;
 
@@ -30,7 +31,7 @@ namespace ConsoleApp1
             {
                 var fFile = new FileInfo(file);
 
-                if (validExtensions.Contains(fFile.Extension))
+                if ((validExtensions.Contains(fFile.Extension)) && (minModifiedDate <= fFile.LastAccessTime))
                 {
                     var newSourceFile = new Datafile();
 
